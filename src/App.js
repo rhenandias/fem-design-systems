@@ -7,97 +7,196 @@ import {
   TertiaryButton,
 } from "./components/Button";
 
-const ButtonDiv = styled.div`
-  margin: 10px;
+// const ButtonDiv = styled.div`
+//   margin: 10px;
+// `;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+`;
+
+const GridItem = styled.div`
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Text = styled.p`
+  margin: 0;
+  font-size: 1rem;
 `;
 
 function App() {
   return (
     <div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <PrimaryButton>Enviar!</PrimaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
-          <PrimaryButton disabled>Enviar!</PrimaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <SecondaryButton>Enviar!</SecondaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
-          <SecondaryButton disabled>Enviar!</SecondaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <TertiaryButton>Enviar!</TertiaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
-          <TertiaryButton disabled>Enviar!</TertiaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <PrimaryButton modifiers="small">Enviar!</PrimaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
+      <GridContainer>
+        {/* Header */}
+        <GridItem></GridItem>
+        <GridItem>
+          <Text>Primary</Text>
+        </GridItem>
+        <GridItem>
+          <Text>Secondary</Text>
+        </GridItem>
+        <GridItem>
+          <Text>Tertiary</Text>
+        </GridItem>
+
+        {/* Small */}
+        <GridItem>
+          <Text>Small</Text>
+        </GridItem>
+        <GridItem>
+          <PrimaryButton modifiers="small">Enviar</PrimaryButton>
+        </GridItem>
+        <GridItem>
+          <SecondaryButton modifiers="small">Enviar</SecondaryButton>
+        </GridItem>
+        <GridItem>
+          <TertiaryButton modifiers="small">Enviar</TertiaryButton>
+        </GridItem>
+
+        {/* Default */}
+        <GridItem>
+          <Text>Default</Text>
+        </GridItem>
+        <GridItem>
+          <PrimaryButton>Enviar</PrimaryButton>
+        </GridItem>
+        <GridItem>
+          <SecondaryButton>Enviar</SecondaryButton>
+        </GridItem>
+        <GridItem>
+          <TertiaryButton>Enviar</TertiaryButton>
+        </GridItem>
+
+        {/* Large */}
+        <GridItem>
+          <Text>Large</Text>
+        </GridItem>
+        <GridItem>
+          <PrimaryButton modifiers="large">Enviar</PrimaryButton>
+        </GridItem>
+        <GridItem>
+          <SecondaryButton modifiers="large">Enviar</SecondaryButton>
+        </GridItem>
+        <GridItem>
+          <TertiaryButton modifiers="large">Enviar</TertiaryButton>
+        </GridItem>
+
+        {/* Small - Disabled*/}
+        <GridItem>
+          <Text>Small (disabled)</Text>
+        </GridItem>
+        <GridItem>
           <PrimaryButton modifiers="small" disabled>
-            Enviar!
+            Enviar
           </PrimaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <SecondaryButton modifiers="small">Enviar!</SecondaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
+        </GridItem>
+        <GridItem>
           <SecondaryButton modifiers="small" disabled>
-            Enviar!
+            Enviar
           </SecondaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <TertiaryButton modifiers="small">Enviar!</TertiaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
+        </GridItem>
+        <GridItem>
           <TertiaryButton modifiers="small" disabled>
-            Enviar!
+            Enviar
           </TertiaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <PrimaryButton modifiers="large">Enviar!</PrimaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
+        </GridItem>
+
+        {/* Default */}
+        <GridItem>
+          <Text>Default (disabled)</Text>
+        </GridItem>
+        <GridItem>
+          <PrimaryButton disabled>Enviar</PrimaryButton>
+        </GridItem>
+        <GridItem>
+          <SecondaryButton disabled>Enviar</SecondaryButton>
+        </GridItem>
+        <GridItem>
+          <TertiaryButton disabled>Enviar</TertiaryButton>
+        </GridItem>
+
+        {/* Large */}
+        <GridItem>
+          <Text>Large (disabled)</Text>
+        </GridItem>
+        <GridItem>
           <PrimaryButton modifiers="large" disabled>
-            Enviar!
+            Enviar
           </PrimaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <SecondaryButton modifiers="large">Enviar!</SecondaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
+        </GridItem>
+        <GridItem>
           <SecondaryButton modifiers="large" disabled>
-            Enviar!
+            Enviar
           </SecondaryButton>
-        </ButtonDiv>
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonDiv>
-          <TertiaryButton modifiers="large">Enviar!</TertiaryButton>
-        </ButtonDiv>
-        <ButtonDiv>
+        </GridItem>
+        <GridItem>
           <TertiaryButton modifiers="large" disabled>
-            Enviar!
+            Enviar
           </TertiaryButton>
-        </ButtonDiv>
-      </div>
+        </GridItem>
+
+        {/* Warning */}
+        <GridItem>
+          <Text>Warning</Text>
+        </GridItem>
+        <GridItem>
+          <PrimaryButton modifiers={["warning"]}>Enviar</PrimaryButton>
+        </GridItem>
+        <GridItem>
+          <SecondaryButton modifiers={["warning", "warningSecondary"]}>
+            Enviar
+          </SecondaryButton>
+        </GridItem>
+        <GridItem>
+          <TertiaryButton modifiers={["warning", "warningTertiary"]}>
+            Enviar
+          </TertiaryButton>
+        </GridItem>
+
+        {/* Danger */}
+        <GridItem>
+          <Text>Danger</Text>
+        </GridItem>
+        <GridItem>
+          <PrimaryButton modifiers={["warning"]}>Enviar</PrimaryButton>
+        </GridItem>
+        <GridItem>
+          <SecondaryButton modifiers={["warning", "warningSecondary"]}>
+            Enviar
+          </SecondaryButton>
+        </GridItem>
+        <GridItem>
+          <TertiaryButton modifiers={["warning", "warningTertiary"]}>
+            Enviar
+          </TertiaryButton>
+        </GridItem>
+
+        {/* Warning */}
+        <GridItem>
+          <Text>Success</Text>
+        </GridItem>
+        <GridItem>
+          <PrimaryButton modifiers={["warning"]}>Enviar</PrimaryButton>
+        </GridItem>
+        <GridItem>
+          <SecondaryButton modifiers={["warning", "warningSecondary"]}>
+            Enviar
+          </SecondaryButton>
+        </GridItem>
+        <GridItem>
+          <TertiaryButton modifiers={["warning", "warningTertiary"]}>
+            Enviar
+          </TertiaryButton>
+        </GridItem>
+      </GridContainer>
     </div>
   );
 }

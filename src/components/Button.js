@@ -10,9 +10,36 @@ const BUTTON_MODIFIERS = {
   `,
   large: () => `
     font-size: ${typeScale.h5};
-    padding: 24px 64px;
+    padding: 12px 64px;
     min-width: 244px;
     min-height: 51px;
+  `,
+  warning: () => `
+    background-color: ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColorInverted};
+
+    &:hover:enabled, &:focus {
+      background-color: ${defaultTheme.status.warningColorHover};
+      outline: 1px solid ${defaultTheme.status.warningColorHover};
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.warningColorActive}
+    }
+  `,
+  warningSecondary: () => `
+    background: none;
+    border: 1px solid ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.status.warningColor};
+
+    &:hover:enabled, &:focus {
+      background-color: ${defaultTheme.status.warningColorHover};
+      outline: 1px solid ${defaultTheme.status.warningColorHover};
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.warningColorActive}
+    }
   `,
 };
 
@@ -23,6 +50,8 @@ const Button = styled.button`
   min-width: 186px;
   min-height: 45px;
   cursor: pointer;
+
+  flex-grow: 0;
 
   transition: background-color 0.2 linear, color 0.2s linear;
 
@@ -70,6 +99,10 @@ const SecondaryButton = styled(Button)`
     background-color: none;
     color: ${defaultTheme.disabled};
     border: 1px solid ${defaultTheme.disabled};
+  }
+
+  &:hover:enabled {
+    border-color: ${defaultTheme.primaryHoverColor};
   }
 
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
