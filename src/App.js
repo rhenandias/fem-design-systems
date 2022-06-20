@@ -7,10 +7,6 @@ import {
   TertiaryButton,
 } from "./components/Button";
 
-// const ButtonDiv = styled.div`
-//   margin: 10px;
-// `;
-
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -148,53 +144,41 @@ function App() {
           <Text>Warning</Text>
         </GridItem>
         <GridItem>
-          <PrimaryButton modifiers={["warning"]}>Enviar</PrimaryButton>
+          <PrimaryButton modifiers="warning">Enviar</PrimaryButton>
         </GridItem>
         <GridItem>
-          <SecondaryButton modifiers={["warning", "warningSecondary"]}>
-            Enviar
-          </SecondaryButton>
+          <SecondaryButton modifiers="warningSecondary">Enviar</SecondaryButton>
         </GridItem>
         <GridItem>
-          <TertiaryButton modifiers={["warning", "warningTertiary"]}>
-            Enviar
-          </TertiaryButton>
+          <TertiaryButton modifiers="warningTertiary">Enviar</TertiaryButton>
         </GridItem>
 
-        {/* Danger */}
+        {/* Error */}
         <GridItem>
-          <Text>Danger</Text>
+          <Text>Error</Text>
         </GridItem>
         <GridItem>
-          <PrimaryButton modifiers={["warning"]}>Enviar</PrimaryButton>
+          <PrimaryButton modifiers="error">Enviar</PrimaryButton>
         </GridItem>
         <GridItem>
-          <SecondaryButton modifiers={["warning", "warningSecondary"]}>
-            Enviar
-          </SecondaryButton>
+          <SecondaryButton modifiers="errorSecondary">Enviar</SecondaryButton>
         </GridItem>
         <GridItem>
-          <TertiaryButton modifiers={["warning", "warningTertiary"]}>
-            Enviar
-          </TertiaryButton>
+          <TertiaryButton modifiers="errorTertiary">Enviar</TertiaryButton>
         </GridItem>
 
-        {/* Warning */}
+        {/* Success */}
         <GridItem>
           <Text>Success</Text>
         </GridItem>
         <GridItem>
-          <PrimaryButton modifiers={["warning"]}>Enviar</PrimaryButton>
+          <PrimaryButton modifiers="success">Enviar</PrimaryButton>
         </GridItem>
         <GridItem>
-          <SecondaryButton modifiers={["warning", "warningSecondary"]}>
-            Enviar
-          </SecondaryButton>
+          <SecondaryButton modifiers="successSecondary">Enviar</SecondaryButton>
         </GridItem>
         <GridItem>
-          <TertiaryButton modifiers={["warning", "warningTertiary"]}>
-            Enviar
-          </TertiaryButton>
+          <TertiaryButton modifiers="successTertiary">Enviar</TertiaryButton>
         </GridItem>
       </GridContainer>
     </div>
